@@ -1,0 +1,9 @@
+[submodule "external/pysca.git"]
+	path = external/pysca.git
+	url = https://github.com/vlinnik/pysca.git
+[submodule "external/pyplc.git"]
+	path = external/pyplc.git
+	url = https://github.com/vlinnik/pyplc.git
+[submodule "external/concretetheme"]
+	path = external/concretetheme
+	url = https://github.com/vlinnik/concretetheme.git
