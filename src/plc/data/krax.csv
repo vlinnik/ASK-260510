@@ -1,0 +1,94 @@
+Имя;Тип;Модуль;Канал;Описание
+CEMENT_M_1;AI;1;1;Масса дозатора цемента
+WATER_M_1;AI;1;2;Масса дозатора воды
+ADDITIONS_M_1;AI;1;3;Масса дозатора ХД-1
+ADDITIONS_M_2;AI;1;4;Масса дозатора ХД-2
+
+FILLERS_M_1;AI;2;1;Масса конвейера
+MCONTAINER_M_1;AI;2;2;Масса промежуточного бункера
+MIXER_I_1;AI;2;3;Ток двигателя смесителя
+
+DCEMENT_CLOSED_1;DI;3;1;Закрыт дозатор цемента
+DWATER_CLOSED_1;DI;3;2;Закрыт дозатор воды
+DADDITIONS_CLOSED_1;DI;3;3;Закрыт дозатор ХД-1
+DADDITIONS_CLOSED_2;DI;3;4;Закрыт дозатор ХД-2
+MCONTAINER_CLOSED_1;DI;3;5;Закрыт промежуточный бункер
+MCONTAINER_OPENED_1;DI;3;6;Открыт промежуточный бункер
+AUGER_ISON_1;DI;3;7;Включен Шнек-1
+AUGER_ISON_2;DI;3;8;Включен Шнек-2
+
+WATER_CLOSED_1;DI;4;1;Закрыт затвор воды
+ADDITION_CLOSED_1;DI;4;2;Закрыт затвор ХД-1
+ADDITION_CLOSED_2;DI;4;3;Закрыт затвор ХД-2
+ADDITION_CLOSED_3;DI;4;4;Закрыт затвор ХД-3
+ADDITION_CLOSED_4;DI;4;5;Закрыт затвор ХД-4
+FILLER_CLOSED_1;DI;4;6;Закрыт бункер 1
+FILLER_CLOSED_2;DI;4;7;Закрыт бункер 2
+FILLER_CLOSED_3;DI;4;8;Закрыт бункер 3
+
+FILLER_CLOSED_4;DI;5;1;Закрыт бункер 4
+FILLER_CLOSED_5;DI;5;2;Закрыт бункер 5
+FILLER_CLOSED_6;DI;5;3;Закрыт бункер 6
+MIXER_CLOSED_1;DI;5;4;Смеситель закрыт
+MIXER_OPENED_1;DI;5;5;Смеситель открыт
+MIXER_ISON_1;DI;5;6;Смеситель включен
+CONVEYOR_ISON_1;DI;5;7;Конвейер включен
+CONVEYOR_ROTATING_1;DI;5;8;Конвейер вращается
+
+TCONVEYOR_ISON_1;DI;6;1;Транспортный конвейер включен
+TCONVEYOR_ROTATING_1;DI;6;2;Транспортный конвейер вращается
+PUMP_WATER_ISON_1;DI;6;3;Включен насос воды
+PUMP_ADDITION_1_ISON_1;DI;6;4;Включен насос ХД-1 
+PUMP_ADDITION_2_ISON_1;DI;6;5;Включен насос ХД-2 
+PUMP_ADDITION_3_ISON_1;DI;6;6;Включен насос ХД-3
+PUMP_ADDITION_4_ISON_1;DI;6;7;Включен насос ХД-4
+ROPE_CONVEYOR_1;DI;6;8;Трос безопасности конвейера
+
+ROPE_TCONVEYOR_1;DI;7;1;Трос безопасности транспортного
+AUTOMAT_1_ISON_1;DI;7;2;Включен автомат #1
+AUTOMAT_2_ISON_1;DI;7;3;Включен автомат #2
+AUTOMAT_3_ISON_1;DI;7;4;Включен автомат #3
+
+DCEMENT_OPEN_1;DO;8;1;Открыть дозатор цемента
+DWATER_OPEN_1;DO;8;2;Открыть дозатор воды
+DADDITIONS_OPEN_1;DO;8;3;Открыть дозатор ХД-1
+DADDITIONS_OPEN_2;DO;8;4;Открыть дозатор ХД-2
+CONVEYOR_ON_1;DO;8;5;Включить конвейер
+CONVEYOR_OFF_1;DO;8;6;Выключить конвейер
+TCONVEYOR_ON_1;DO;8;7;Включить транспортный конвейер
+TCONVEYOR_OFF_1;DO;8;8;Выключить транспортный конвейер
+
+MCONTAINER_OPEN_1;DO;9;1;Открыть промежуточный бункер
+AUGER_ON_1;DO;9;2;Включить шнек-1
+AUGER_ON_2;DO;9;3;Включить шнек-2
+WPUMP_ON_1;DO;9;4;Включить насос воды
+APUMP_ON_1;DO;9;5;Включить насос ХД-1
+APUMP_ON_2;DO;9;6;Включить насос ХД-2
+APUMP_ON_3;DO;9;7;Включить насос ХД-3
+APUMP_ON_4;DO;9;8;Включить насос ХД-4
+
+FILLER_OPEN_1;DO;10;1;Открыть бункер-1
+FILLER_OPEN_2;DO;10;2;Открыть бункер-2
+FILLER_OPEN_3;DO;10;3;Открыть бункер-3
+FILLER_OPEN_4;DO;10;4;Открыть бункер-4
+FILLER_OPEN_5;DO;10;5;Открыть бункер-5
+FILLER_OPEN_6;DO;10;6;Открыть бункер-6
+MIXER_ON_1;DO;10;7;Включить смеситель
+MIXER_OFF_1;DO;10;8;Выключить смеситель
+
+MIXER_OPEN_1;DO;11;1;Открыть смеситель
+WATER_OPEN_1;DO;11;2;Открыть затвор воды
+ADDITION_OPEN_1;DO;11;3;Открыть затвор ХД-1
+ADDITION_OPEN_2;DO;11;4;Открыть затвор ХД-2
+ADDITION_OPEN_3;DO;11;5;Открыть затвор ХД-3
+ADDITION_OPEN_4;DO;11;6;Открыть затвор ХД-4
+VIBRATOR_ON_1;DO;11;7;Вибратор 1-1
+VIBRATOR_ON_2;DO;11;8;Вибратор 1-2
+
+VIBRATOR_ON_3;DO;12;1;Вибратор 2-1
+VIBRATOR_ON_4;DO;12;2;Вибратор 2-2
+VIBRATOR_ON_5;DO;12;3;Вибратор 2-1
+VIBRATOR_ON_6;DO;12;4;Вибратор 2-2
+DC_VIBRATOR_ON_1;DO;12;5;Вибратор дозатора цемента
+DF_VIBRATOR_ON_1;DO;12;6;Вибратор конвейера
+MC_VIBRATOR_ON_1;DO;12;7;Вибратор бункера ожидания

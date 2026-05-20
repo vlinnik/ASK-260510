@@ -1,0 +1,9 @@
+[Desktop Entry]
+Exec=pysca project run gui
+Name=PYSCA-HMI 
+Type=Application
+Icon=pysca-hmi
+Version=1.0
+Terminal=true
+Comment=АСУ PYSCA-HMI
+StartupNotify=true

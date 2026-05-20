@@ -7,3 +7,6 @@
 [submodule "external/concretetheme"]
 	path = external/concretetheme
 	url = https://github.com/vlinnik/concretetheme.git
+[submodule "src/external/concrete.git"]
+	path = external/concrete.git
+	url = https://github.com/vlinnik/concrete.git

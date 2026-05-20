@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=42", "wheel","setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+write_to = "src/gui/_version.py"
+
+[project]
+name = "pysca-hmi"
+dynamic=["version"]
+description = "Визуализация PYSCA-HMI"
+readme = "README.md"
+requires-python = ">=3.6"
+authors = [
+    {name = "<Your Name>", email = "Your-Account@somewhere.ru"}
+]
+urls = { "Homepage" = "https://github.com/your-account/pysca-hmi.git" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+dependencies=["pysca"]
+
+[project.optional-dependencies]
+dev = []
+
+[project.gui-scripts]
+pysca-hmi = "gui.__main__:main"
+
+[tool.setuptools]
+include-package-data = true
+package-dir = { "" = "src"}
+packages = ["gui"]
+
+[tool.setuptools.package-data]
+gui = ["data/**/*"]
+
+[tool.setuptools.data-files]
+"share/applications" = ["pysca-hmi.desktop"]
+
+[project.entry-points."pysca.projects"] 
+gui = "gui.__main__:workdir"
