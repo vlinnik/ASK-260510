@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1402</width>
-    <height>912</height>
+    <width>1576</width>
+    <height>919</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>АСУ БСУ ШАБЛОН-С П.БУНКЕРОМ (с) 2025</string>
+   <string>АСУ БСУ АСК-260510 (с) 2026</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget,#Home
@@ -110,12 +110,39 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
 	background-color: rgb(46, 194, 126);
 	color: white;
 }
+QLabel[style=&quot;status_fail&quot;]
+{
+	border: 1px solid red;
+	background-color: rgba(255,0,0,255);
+	color: white;
+	border-radius: 4px;
+	padding: 4px;
+}
+QLabel:disabled[style=&quot;status_fail&quot;]
+{
+	background-color: rgba(255,0,0,10);
+	border-color: gray;
+	color: gray;
+}
+QGroupBox[style=&quot;panel&quot;]
+{
+	padding-top: 3ex;
+	background-color: rgb(94, 92, 100);
+	border: 1px solid gray;
+	color: silver;
+	margin-top: -1ex;
+}
+QGroupBox::title[style=&quot;panel&quot;]
+{
+	subcontrol-position: top center;
+	subcontrol-origin: margin;
+}
 </string>
   </property>
   <widget class="pyAnimation" name="pyanimation">
    <property name="geometry">
     <rect>
-     <x>973</x>
+     <x>964</x>
      <y>661</y>
      <width>247</width>
      <height>175</height>
@@ -183,7 +210,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
    <widget class="QLabel" name="opened_2">
     <property name="geometry">
      <rect>
-      <x>51</x>
+      <x>70</x>
       <y>113</y>
       <width>22</width>
       <height>22</height>
@@ -212,15 +239,34 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
      <pixmap resource="../concretetheme/concrete.qrc">:/concrete/red.png</pixmap>
     </property>
    </widget>
+   <widget class="QLabel" name="middle">
+    <property name="geometry">
+     <rect>
+      <x>48</x>
+      <y>113</y>
+      <width>22</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/green.png</pixmap>
+    </property>
+   </widget>
   </widget>
   <widget class="MixerPanel" name="mixerpanel">
    <property name="geometry">
     <rect>
-     <x>990</x>
+     <x>950</x>
      <y>824</y>
-     <width>229</width>
+     <width>272</width>
      <height>71</height>
     </rect>
+   </property>
+   <property name="gateType">
+    <enum>MixerPanel::Hydraulic</enum>
    </property>
   </widget>
   <widget class="TConveyorPanel" name="tconveyorpanel">
@@ -236,7 +282,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="MContainerPanel" name="mcontainerpanel">
    <property name="geometry">
     <rect>
-     <x>753</x>
+     <x>750</x>
      <y>470</y>
      <width>204</width>
      <height>93</height>
@@ -321,7 +367,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QWidget" name="dgroup_1" native="true">
    <property name="geometry">
     <rect>
-     <x>1049</x>
+     <x>817</x>
      <y>232</y>
      <width>138</width>
      <height>236</height>
@@ -380,6 +426,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
        <height>32</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -401,6 +450,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
        <width>32</width>
        <height>32</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="text">
       <string/>
@@ -430,6 +482,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
        <width>54</width>
        <height>50</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="text">
       <string/>
@@ -469,7 +524,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QWidget" name="dgroup_3" native="true">
    <property name="geometry">
     <rect>
-     <x>1220</x>
+     <x>1087</x>
      <y>230</y>
      <width>148</width>
      <height>255</height>
@@ -545,6 +600,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -566,6 +624,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <width>54</width>
       <height>50</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -591,7 +652,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QWidget" name="dgroup_2" native="true">
    <property name="geometry">
     <rect>
-     <x>866</x>
+     <x>607</x>
      <y>230</y>
      <width>160</width>
      <height>263</height>
@@ -625,6 +686,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
        <width>32</width>
        <height>32</height>
       </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="text">
       <string/>
@@ -686,6 +750,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>50</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -710,7 +777,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="pyAnimation" name="container_1">
    <property name="geometry">
     <rect>
-     <x>1062</x>
+     <x>769</x>
      <y>180</y>
      <width>106</width>
      <height>50</height>
@@ -731,7 +798,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="DoserPanel" name="doserpanel_1_1">
    <property name="geometry">
     <rect>
-     <x>1047</x>
+     <x>754</x>
      <y>32</y>
      <width>130</width>
      <height>100</height>
@@ -744,7 +811,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="DoserPanel" name="doserpanel_2_1">
    <property name="geometry">
     <rect>
-     <x>871</x>
+     <x>612</x>
      <y>33</y>
      <width>130</width>
      <height>100</height>
@@ -757,7 +824,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="pyAnimation" name="container_3">
    <property name="geometry">
     <rect>
-     <x>916</x>
+     <x>657</x>
      <y>181</y>
      <width>42</width>
      <height>42</height>
@@ -781,7 +848,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="pyAnimation" name="container_4">
    <property name="geometry">
     <rect>
-     <x>1278</x>
+     <x>1107</x>
      <y>187</y>
      <width>42</width>
      <height>42</height>
@@ -805,7 +872,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="DoserPanel" name="doserpanel_3_1">
    <property name="geometry">
     <rect>
-     <x>1230</x>
+     <x>1027</x>
      <y>32</y>
      <width>130</width>
      <height>100</height>
@@ -835,6 +902,70 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
    <property name="ceaseless">
     <bool>true</bool>
    </property>
+   <widget class="QPushButton" name="helper_15">
+    <property name="geometry">
+     <rect>
+      <x>163</x>
+      <y>85</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../concretetheme/concrete.qrc">
+      <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="style" stdset="0">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="helper_16">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>85</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../concretetheme/concrete.qrc">
+      <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="style" stdset="0">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="pyAnimation" name="container_5">
    <property name="geometry">
@@ -868,6 +999,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -886,6 +1020,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <width>32</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -940,6 +1077,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -958,6 +1098,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <width>32</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -998,7 +1141,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
     <rect>
      <x>-2</x>
      <y>19</y>
-     <width>728</width>
+     <width>611</width>
      <height>430</height>
     </rect>
    </property>
@@ -1018,7 +1161,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>1010</x>
+     <x>1001</x>
      <y>710</y>
      <width>176</width>
      <height>42</height>
@@ -1104,11 +1247,14 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QPushButton" name="open_1">
    <property name="geometry">
     <rect>
-     <x>1100</x>
+     <x>807</x>
      <y>140</y>
      <width>32</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="text">
     <string/>
@@ -1123,11 +1269,14 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QPushButton" name="open_2">
    <property name="geometry">
     <rect>
-     <x>920</x>
+     <x>661</x>
      <y>142</y>
      <width>32</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="text">
     <string/>
@@ -1142,11 +1291,14 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QPushButton" name="open_3">
    <property name="geometry">
     <rect>
-     <x>1284</x>
+     <x>1081</x>
      <y>145</y>
      <width>32</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="text">
     <string/>
@@ -1214,6 +1366,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1232,6 +1387,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <width>32</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -1299,6 +1457,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1317,6 +1478,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <width>32</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -1419,6 +1583,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1437,6 +1604,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <width>32</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -1491,6 +1661,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1509,6 +1682,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <width>32</width>
       <height>32</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="text">
      <string/>
@@ -1571,7 +1747,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>981</x>
+     <x>972</x>
      <y>620</y>
      <width>115</width>
      <height>37</height>
@@ -1579,6 +1755,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
    </property>
    <property name="text">
     <string>НЕ НАБИРАТЬ</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -1590,7 +1769,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>1100</x>
+     <x>1091</x>
      <y>620</y>
      <width>115</width>
      <height>37</height>
@@ -1598,6 +1777,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
    </property>
    <property name="text">
     <string>НЕ ЗАГРУЖАТЬ</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -1609,7 +1791,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>1053</x>
+     <x>1044</x>
      <y>581</y>
      <width>85</width>
      <height>29</height>
@@ -1635,7 +1817,7 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="pyAnimation" name="gate_1">
    <property name="geometry">
     <rect>
-     <x>929</x>
+     <x>920</x>
      <y>763</y>
      <width>114</width>
      <height>137</height>
@@ -1742,6 +1924,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>32</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1771,6 +1956,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>22</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>ДАТЧИКИ ЗАКРЫТО/ОТКРЫТО</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1787,6 +1975,9 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
       <height>22</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>ДАТЧИКИ ЗАКРЫТО/ОТКРЫТО</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -1798,11 +1989,14 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <widget class="QPushButton" name="helper_11">
    <property name="geometry">
     <rect>
-     <x>209</x>
+     <x>217</x>
      <y>810</y>
      <width>54</width>
      <height>50</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="text">
     <string/>
@@ -1894,6 +2088,822 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
     <string>sys</string>
    </property>
   </widget>
+  <widget class="pyAnimation" name="container_2">
+   <property name="geometry">
+    <rect>
+     <x>894</x>
+     <y>180</y>
+     <width>106</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/rauger.mng</string>
+    </url>
+   </property>
+   <property name="ceaseless">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="DoserPanel" name="doserpanel_1_2">
+   <property name="geometry">
+    <rect>
+     <x>890</x>
+     <y>30</y>
+     <width>130</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>СИЛОС-2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="open_15">
+   <property name="geometry">
+    <rect>
+     <x>941</x>
+     <y>142</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <property name="style" stdset="0">
+    <string>open</string>
+   </property>
+  </widget>
+  <widget class="DoserPanel" name="doserpanel_3_2">
+   <property name="geometry">
+    <rect>
+     <x>1159</x>
+     <y>31</y>
+     <width>130</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>ХД-2</string>
+   </property>
+   <property name="precision">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="pyAnimation" name="container_11">
+   <property name="geometry">
+    <rect>
+     <x>1167</x>
+     <y>187</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/valve.mng</string>
+    </url>
+   </property>
+   <property name="bounce">
+    <bool>true</bool>
+   </property>
+   <property name="ceaseless">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="open_16">
+   <property name="geometry">
+    <rect>
+     <x>1211</x>
+     <y>145</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <property name="style" stdset="0">
+    <string>open</string>
+   </property>
+  </widget>
+  <widget class="DoserPanel" name="doserpanel_3_3">
+   <property name="geometry">
+    <rect>
+     <x>1292</x>
+     <y>30</y>
+     <width>130</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>ХД-3</string>
+   </property>
+   <property name="precision">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="DoserPanel" name="doserpanel_3_4">
+   <property name="geometry">
+    <rect>
+     <x>1426</x>
+     <y>30</y>
+     <width>130</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>ХД-4</string>
+   </property>
+   <property name="precision">
+    <number>2</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="open_17">
+   <property name="geometry">
+    <rect>
+     <x>1470</x>
+     <y>143</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <property name="style" stdset="0">
+    <string>open</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="open_18">
+   <property name="geometry">
+    <rect>
+     <x>1340</x>
+     <y>143</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <property name="style" stdset="0">
+    <string>open</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="dgroup_4" native="true">
+   <property name="geometry">
+    <rect>
+     <x>1346</x>
+     <y>228</y>
+     <width>148</width>
+     <height>255</height>
+    </rect>
+   </property>
+   <widget class="pyAnimation" name="dadditions_2">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>34</y>
+      <width>86</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="source">
+     <url>
+      <string>qrc:/concrete/dadditions.mng</string>
+     </url>
+    </property>
+    <property name="bounce">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="DosatorPanel" name="dosatorpanel_5">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>10</y>
+      <width>140</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ХД-2</string>
+    </property>
+    <property name="precision">
+     <number>2</number>
+    </property>
+   </widget>
+   <widget class="pyAnimation" name="pyanimation_14">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>160</y>
+      <width>32</width>
+      <height>95</height>
+     </rect>
+    </property>
+    <property name="running">
+     <bool>true</bool>
+    </property>
+    <property name="source">
+     <url>
+      <string>qrc:/concrete/water-rain.mng</string>
+     </url>
+    </property>
+    <property name="ceaseless">
+     <bool>true</bool>
+    </property>
+    <property name="rewind">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="open_19">
+    <property name="geometry">
+     <rect>
+      <x>58</x>
+      <y>80</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="style" stdset="0">
+     <string>open</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="helper_14">
+    <property name="geometry">
+     <rect>
+      <x>48</x>
+      <y>180</y>
+      <width>54</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../concretetheme/concrete.qrc">
+      <normaloff>:/concrete/attention.png</normaloff>:/concrete/attention.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>48</width>
+      <height>48</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="style" stdset="0">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="pyAnimation" name="container_12">
+   <property name="geometry">
+    <rect>
+     <x>1366</x>
+     <y>185</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/valve.mng</string>
+    </url>
+   </property>
+   <property name="bounce">
+    <bool>true</bool>
+   </property>
+   <property name="ceaseless">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="pyAnimation" name="container_13">
+   <property name="geometry">
+    <rect>
+     <x>1426</x>
+     <y>185</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/valve.mng</string>
+    </url>
+   </property>
+   <property name="bounce">
+    <bool>true</bool>
+   </property>
+   <property name="ceaseless">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>1437</x>
+     <y>520</y>
+     <width>130</width>
+     <height>345</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>АВАРИИ</string>
+   </property>
+   <property name="style" stdset="0">
+    <string>panel</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="power_3">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>НАСОСЫ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="power_1">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>КОНВЕЙЕРЫ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="power_2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>ЦЕМЕНТ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="power_5">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>КОМПРЕССОР</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="power_4">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>СМЕСИТЕЛЬ</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="power_6">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>ВВОД</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="rope_3">
+      <property name="text">
+       <string>ЛЮК</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="rope_1">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>ТРОС К</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="rope_2">
+      <property name="text">
+       <string>ТРОС ТК</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="style" stdset="0">
+       <string>status_fail</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="silage_1">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>755</x>
+     <y>0</y>
+     <width>128</width>
+     <height>408</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/silage-short.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="silage_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>885</x>
+     <y>0</y>
+     <width>128</width>
+     <height>408</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/silage-short.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hlevel_1">
+   <property name="geometry">
+    <rect>
+     <x>774</x>
+     <y>8</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>ДАТЧИК УРОВНЯ</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/red.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="llevel_1">
+   <property name="geometry">
+    <rect>
+     <x>777</x>
+     <y>240</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>ДАТЧИК УРОВНЯ</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/green.png</pixmap>
+   </property>
+  </widget>
+  <widget class="pyAnimation" name="pump_1">
+   <property name="geometry">
+    <rect>
+     <x>635</x>
+     <y>810</y>
+     <width>84</width>
+     <height>82</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="toolTip">
+    <string>НАСОС ВЫГРУЗКИ ВОДЫ</string>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/pump.mng</string>
+    </url>
+   </property>
+   <property name="ceaseless">
+    <bool>true</bool>
+   </property>
+   <widget class="QLabel" name="powered_1">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/bolt.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="pyAnimation" name="pump_2">
+   <property name="geometry">
+    <rect>
+     <x>1070</x>
+     <y>140</y>
+     <width>84</width>
+     <height>82</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="toolTip">
+    <string>НАСОСЫ ХД</string>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/pump.mng</string>
+    </url>
+   </property>
+   <property name="ceaseless">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="pyAnimation" name="pump_3">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>140</y>
+     <width>84</width>
+     <height>82</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="toolTip">
+    <string>НАСОСЫ ХД</string>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/pump.mng</string>
+    </url>
+   </property>
+   <property name="ceaseless">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="pyAnimation" name="pump_4">
+   <property name="geometry">
+    <rect>
+     <x>1335</x>
+     <y>140</y>
+     <width>84</width>
+     <height>82</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="toolTip">
+    <string>НАСОСЫ ХД</string>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/pump.mng</string>
+    </url>
+   </property>
+   <property name="ceaseless">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="pyAnimation" name="pump_5">
+   <property name="geometry">
+    <rect>
+     <x>1425</x>
+     <y>140</y>
+     <width>84</width>
+     <height>82</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="toolTip">
+    <string>НАСОСЫ ХД</string>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/pump.mng</string>
+    </url>
+   </property>
+   <property name="ceaseless">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="pyAnimation" name="pump_6">
+   <property name="geometry">
+    <rect>
+     <x>639</x>
+     <y>140</y>
+     <width>84</width>
+     <height>82</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::CustomContextMenu</enum>
+   </property>
+   <property name="toolTip">
+    <string>НАСОС ПОДАЧИ ВОДЫ</string>
+   </property>
+   <property name="source">
+    <url>
+     <string>qrc:/concrete/pump.mng</string>
+    </url>
+   </property>
+   <property name="ceaseless">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pressure">
+   <property name="geometry">
+    <rect>
+     <x>1440</x>
+     <y>873</y>
+     <width>124</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>ДАВЛЕНИЕ В СИСТЕМЕ</string>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="format">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="mc_weight">
+   <property name="geometry">
+    <rect>
+     <x>727</x>
+     <y>472</y>
+     <width>16</width>
+     <height>85</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>ВЕС БУНКЕРА ОЖИДАНИЯ</string>
+   </property>
+   <property name="maximum">
+    <number>65535</number>
+   </property>
+   <property name="textVisible">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="format">
+    <string/>
+   </property>
+  </widget>
+  <zorder>pump_6</zorder>
+  <zorder>pump_3</zorder>
+  <zorder>pump_2</zorder>
+  <zorder>pump_5</zorder>
+  <zorder>pump_4</zorder>
+  <zorder>silage_2</zorder>
+  <zorder>silage_1</zorder>
   <zorder>dfillers_2</zorder>
   <zorder>mcontainer_1</zorder>
   <zorder>gate_1</zorder>
@@ -1940,6 +2950,25 @@ QAbstractButton:flat::checked[style=&quot;warning&quot;]
   <zorder>powered</zorder>
   <zorder>scantime</zorder>
   <zorder>mem</zorder>
+  <zorder>container_2</zorder>
+  <zorder>doserpanel_1_2</zorder>
+  <zorder>open_15</zorder>
+  <zorder>doserpanel_3_2</zorder>
+  <zorder>container_11</zorder>
+  <zorder>open_16</zorder>
+  <zorder>doserpanel_3_3</zorder>
+  <zorder>doserpanel_3_4</zorder>
+  <zorder>open_17</zorder>
+  <zorder>open_18</zorder>
+  <zorder>dgroup_4</zorder>
+  <zorder>container_12</zorder>
+  <zorder>container_13</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>hlevel_1</zorder>
+  <zorder>llevel_1</zorder>
+  <zorder>pump_1</zorder>
+  <zorder>pressure</zorder>
+  <zorder>mc_weight</zorder>
  </widget>
  <customwidgets>
   <customwidget>

@@ -31,7 +31,7 @@ navbar:
   - Home
   tools:
   - Extensions
-  title: "АСУ БСУ ШАБЛОН: П. БУНКЕР (c) 2026"
+  title: "АСУ БСУ АСК-260510 (с) 2026"
 
 devices:
 - name: PLC

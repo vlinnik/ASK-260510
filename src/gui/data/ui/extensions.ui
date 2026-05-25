@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>814</width>
+    <width>753</width>
     <height>74</height>
    </rect>
   </property>
@@ -26,6 +26,27 @@
    <property name="bottomMargin">
     <number>0</number>
    </property>
+   <item row="0" column="0">
+    <widget class="QCheckBox" name="vibrator_1">
+     <property name="text">
+      <string>В. БИМ-1</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QCheckBox" name="dc_vibrator_1">
+     <property name="text">
+      <string>В.ДЦ-1</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QCheckBox" name="vibrator_4">
+     <property name="text">
+      <string>В. БИМ-4</string>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="2">
     <widget class="QCheckBox" name="vibrator_5">
      <property name="text">
@@ -33,7 +54,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="4" rowspan="2">
+   <item row="0" column="5" rowspan="2">
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
       <string>СМ-1</string>
@@ -91,31 +112,10 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QCheckBox" name="vibrator_3">
-     <property name="text">
-      <string>В. БИМ-3</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QCheckBox" name="vibrator_4">
-     <property name="text">
-      <string>В. БИМ-4</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="2">
     <widget class="QCheckBox" name="vibrator_6">
      <property name="text">
       <string>В. БИМ-6</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QCheckBox" name="vibrator_1">
-     <property name="text">
-      <string>В. БИМ-1</string>
      </property>
     </widget>
    </item>
@@ -126,10 +126,10 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="3">
-    <widget class="QCheckBox" name="dc_vibrator_1">
+   <item row="0" column="1">
+    <widget class="QCheckBox" name="vibrator_3">
      <property name="text">
-      <string>В.ДЦ-1</string>
+      <string>В. БИМ-3</string>
      </property>
     </widget>
    </item>
@@ -137,6 +137,13 @@
     <widget class="QCheckBox" name="df_vibrator_1">
      <property name="text">
       <string>В.КИ-1</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QCheckBox" name="filter_1">
+     <property name="text">
+      <string>ФИЛЬТР</string>
      </property>
     </widget>
    </item>
