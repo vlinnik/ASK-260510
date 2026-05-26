@@ -215,6 +215,7 @@ def imitation()->Tuple[POU,...]:    #если имитацию создават�
     hw.M_POWER_OK_1.force(True)
     hw.CONV_POWER_OK_1.force(True)
     hw.LLEVEL_SILAGE_1.force(True)
+    hw.MAN_DISABLE_1.force(True)
     
     return (imotor_1, igate_1, 
             idcement_1, iauger_1, iauger_2, icement_m_1, 
