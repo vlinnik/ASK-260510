@@ -227,7 +227,7 @@ def imitation()->Tuple[POU,...]:    #если имитацию создават�
             iconv_rot_1,
             imcontainer_m_1,)
 
-if sys.platform!='esp32' or True:
+if sys.platform!='esp32':
     instances += imitation( )
 
 if plc: plc.run(instances=instances,ctx=globals())
