@@ -191,7 +191,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/bell.png</normaloff>:/concrete/bell.png</iconset>
     </property>
     <property name="iconSize">
@@ -220,7 +220,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/green.png</pixmap>
+     <pixmap resource="../concrete.qrc">:/concrete/green.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="closed_2">
@@ -236,7 +236,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/red.png</pixmap>
+     <pixmap resource="../concrete.qrc">:/concrete/red.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="middle">
@@ -252,7 +252,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/green.png</pixmap>
+     <pixmap resource="../concrete.qrc">:/concrete/green.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -347,7 +347,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -458,7 +458,7 @@ QGroupBox::title[style=&quot;panel&quot;]
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../concretetheme/concrete.qrc">
+      <iconset resource="../concrete.qrc">
        <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
      </property>
      <property name="iconSize">
@@ -490,7 +490,7 @@ QGroupBox::title[style=&quot;panel&quot;]
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../concretetheme/concrete.qrc">
+      <iconset resource="../concrete.qrc">
        <normaloff>:/concrete/attention.png</normaloff>:/concrete/attention.png</iconset>
      </property>
      <property name="iconSize">
@@ -632,7 +632,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/attention.png</normaloff>:/concrete/attention.png</iconset>
     </property>
     <property name="iconSize">
@@ -757,7 +757,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/attention.png</normaloff>:/concrete/attention.png</iconset>
     </property>
     <property name="iconSize">
@@ -918,7 +918,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -950,7 +950,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1028,7 +1028,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1106,7 +1106,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1395,7 +1395,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1486,7 +1486,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1612,7 +1612,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1690,7 +1690,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1931,7 +1931,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/power.png</normaloff>:/concrete/power.png</iconset>
     </property>
     <property name="iconSize">
@@ -1963,7 +1963,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/red.png</pixmap>
+     <pixmap resource="../concrete.qrc">:/concrete/red.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="opened_1">
@@ -1982,7 +1982,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/green.png</pixmap>
+     <pixmap resource="../concrete.qrc">:/concrete/green.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -2002,7 +2002,7 @@ QGroupBox::title[style=&quot;panel&quot;]
     <string/>
    </property>
    <property name="icon">
-    <iconset resource="../concretetheme/concrete.qrc">
+    <iconset resource="../concrete.qrc">
      <normaloff>:/concrete/attention.png</normaloff>:/concrete/attention.png</iconset>
    </property>
    <property name="iconSize">
@@ -2393,7 +2393,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="../concretetheme/concrete.qrc">
+     <iconset resource="../concrete.qrc">
       <normaloff>:/concrete/attention.png</normaloff>:/concrete/attention.png</iconset>
     </property>
     <property name="iconSize">
@@ -2630,7 +2630,7 @@ QGroupBox::title[style=&quot;panel&quot;]
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/silage-short.png</pixmap>
+    <pixmap resource="../concrete.qrc">:/concrete/silage-short.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="silage_2">
@@ -2649,7 +2649,7 @@ QGroupBox::title[style=&quot;panel&quot;]
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/silage-short.png</pixmap>
+    <pixmap resource="../concrete.qrc">:/concrete/silage-short.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="hlevel_1">
@@ -2668,7 +2668,7 @@ QGroupBox::title[style=&quot;panel&quot;]
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/red.png</pixmap>
+    <pixmap resource="../concrete.qrc">:/concrete/red.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="llevel_1">
@@ -2687,7 +2687,7 @@ QGroupBox::title[style=&quot;panel&quot;]
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../concretetheme/concrete.qrc">:/concrete/green.png</pixmap>
+    <pixmap resource="../concrete.qrc">:/concrete/green.png</pixmap>
    </property>
   </widget>
   <widget class="pyAnimation" name="pump_1">
@@ -2726,7 +2726,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../concretetheme/concrete.qrc">:/concrete/bolt.png</pixmap>
+     <pixmap resource="../concrete.qrc">:/concrete/bolt.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2909,7 +2909,6 @@ QGroupBox::title[style=&quot;panel&quot;]
   <zorder>gate_1</zorder>
   <zorder>pyanimation</zorder>
   <zorder>mixerpanel</zorder>
-  <zorder>tconveyorpanel</zorder>
   <zorder>dfillers_1</zorder>
   <zorder>dgroup_1</zorder>
   <zorder>dgroup_3</zorder>
@@ -2969,6 +2968,7 @@ QGroupBox::title[style=&quot;panel&quot;]
   <zorder>pump_1</zorder>
   <zorder>pressure</zorder>
   <zorder>mc_weight</zorder>
+  <zorder>tconveyorpanel</zorder>
  </widget>
  <customwidgets>
   <customwidget>
@@ -3014,6 +3014,7 @@ QGroupBox::title[style=&quot;panel&quot;]
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../concrete.qrc"/>
   <include location="../concretetheme/concrete.qrc"/>
  </resources>
  <connections/>

@@ -16,7 +16,7 @@
             "name": "Simulator",
             "type": "debugpy",
             "request": "launch",
-            "module": "gui",
+            "module": "src.gui",
             "args": [
                 "-w",
                 "src/gui/data",
@@ -28,7 +28,7 @@
             "name": "Runtime",
             "type": "debugpy",
             "request": "launch",
-            "module": "gui",
+            "module": "src.gui",
             "args": [
                 "-w",
                 "src/gui/data",

@@ -41,7 +41,7 @@ class MCLevel(POU):
             if self.raw<=self.zero:
                 self.level = False
             if self.empty and not self._lempty:
-                self.zero = self.raw
+                self.zero = self.raw + 500
             self._lempty = self.empty
 
 mclevel_1 = MCLevel(raw=hw.MCONTAINER_M_1)
@@ -49,30 +49,30 @@ mclevel_1 = MCLevel(raw=hw.MCONTAINER_M_1)
 factory_1 = Factory()
 
 cement_m_1 = Weight(raw=hw.CEMENT_M_1,mmax=1500)
-silage_1 = Container(m = cement_m_1.get_m , out=hw.AUGER_ON_1,closed=~hw.AUGER_ON_1,lock=hw.AUGER_ON_2)
-silage_2 = Container(m = cement_m_1.get_m ,out=hw.AUGER_ON_2,closed=~hw.AUGER_ON_2,lock=hw.AUGER_ON_1)
-dcement_1 = Dosator(m = cement_m_1.get_m, out = hw.DCEMENT_OPEN_1,closed=hw.DCEMENT_CLOSED_1, containers=(silage_1,silage_2))
+silage_1 = Container(m = cement_m_1.get_m , out=hw.AUGER_ON_1,closed=~hw.AUGER_ON_1,lock=Lock(key=lambda: hw.DCEMENT_CLOSED_1 or hw.AUGER_ON_2) )
+silage_2 = Container(m = cement_m_1.get_m ,out=hw.AUGER_ON_2,closed=~hw.AUGER_ON_2,lock=Lock(key=lambda: hw.DCEMENT_CLOSED_1 or hw.AUGER_ON_1) )
+dcement_1 = Dosator(m = cement_m_1.get_m, out = hw.DCEMENT_OPEN_1,closed=~hw.DCEMENT_CLOSED_1, containers=(silage_1,silage_2),lock=Lock(key=lambda: hw.AUGER_ON_1 or hw.AUGER_ON_2))
 dc_vibrator_1 = UnloadHelper(q=hw.DC_VIBRATOR_ON_1,dosator=dcement_1,weight=cement_m_1,point=20, dr=3000)
 aerator_1 = Aerator(enable=hw.AUGER_ON_1,q = hw.AERATOR_ON_1)
 aerator_2 = Aerator(enable=hw.AUGER_ON_2,q = hw.AERATOR_ON_2)
 
 water_m_1 = Weight(raw=hw.WATER_M_1,mmax=500)
-water_1 = Container(m = water_m_1.get_m, out=hw.WATER_OPEN_1,closed=hw.WATER_CLOSED_1)
-dwater_1 = Dosator(m = water_m_1.get_m, out = hw.DWATER_OPEN_1,closed=hw.DWATER_CLOSED_1, containers=(water_1,))
+water_1 = Container(m = water_m_1.get_m, out=hw.WATER_OPEN_1,closed=~hw.WATER_CLOSED_1,lock=Lock(key=hw.DWATER_CLOSED_1))
+dwater_1 = Dosator(m = water_m_1.get_m, out = hw.DWATER_OPEN_1,closed=~hw.DWATER_CLOSED_1, containers=(water_1,),lock=Lock(key=lambda: hw.WATER_OPEN_1 or hw.WATER_CLOSED_1))
 wpump_1 = TOF(clk=hw.WATER_OPEN_1,q=hw.WPUMP_ON_1)
 wpump_out_1 = TOF(clk=hw.DWATER_OPEN_1,q=hw.WPUMP_OUT_ON_1)
 
 additions_m_1 = Weight(raw=hw.ADDITIONS_M_1,mmax=50)
-addition_1 = Container(m = additions_m_1.get_m, out=hw.ADDITION_OPEN_1,closed=hw.ADDITION_CLOSED_1)
-addition_2 = Container(m = additions_m_1.get_m, out=hw.ADDITION_OPEN_2,closed=hw.ADDITION_CLOSED_2)
-dadditions_1 = Dosator(m = additions_m_1.get_m, out = hw.DADDITIONS_OPEN_1,closed=hw.DADDITIONS_CLOSED_1, containers=(addition_1,addition_2))
+addition_1 = Container(m = additions_m_1.get_m, out=hw.ADDITION_OPEN_1,closed=~hw.ADDITION_CLOSED_1,lock=Lock(key=lambda: not hw.DADDITIONS_CLOSED_1 or hw.ADDITION_CLOSED_2))
+addition_2 = Container(m = additions_m_1.get_m, out=hw.ADDITION_OPEN_2,closed=~hw.ADDITION_CLOSED_2,lock=Lock(key=lambda: not hw.DADDITIONS_CLOSED_1 or hw.ADDITION_CLOSED_1))
+dadditions_1 = Dosator(m = additions_m_1.get_m, out = hw.DADDITIONS_OPEN_1,closed=hw.DADDITIONS_CLOSED_1, containers=(addition_1,addition_2),lock=Lock(key=lambda: hw.ADDITION_CLOSED_1 or hw.ADDITION_CLOSED_2))
 apump_1 = TOF(clk=hw.ADDITION_OPEN_1,q=hw.APUMP_ON_1)
 apump_2 = TOF(clk=hw.ADDITION_OPEN_2,q=hw.APUMP_ON_2)
 
 additions_m_2 = Weight(raw=hw.ADDITIONS_M_2,mmax=50)
-addition_3 = Container(m = additions_m_2.get_m, out=hw.ADDITION_OPEN_3,closed=hw.ADDITION_CLOSED_3)
-addition_4 = Container(m = additions_m_2.get_m, out=hw.ADDITION_OPEN_4,closed=hw.ADDITION_CLOSED_4)
-dadditions_2 = Dosator(m = additions_m_2.get_m, out = hw.DADDITIONS_OPEN_2,closed=hw.DADDITIONS_CLOSED_2, containers=(addition_3,addition_4))
+addition_3 = Container(m = additions_m_2.get_m, out=hw.ADDITION_OPEN_3,closed=~hw.ADDITION_CLOSED_3,lock=Lock(key=lambda: not hw.DADDITIONS_CLOSED_2 or hw.ADDITION_CLOSED_4))
+addition_4 = Container(m = additions_m_2.get_m, out=hw.ADDITION_OPEN_4,closed=~hw.ADDITION_CLOSED_4,lock=Lock(key=lambda: not hw.DADDITIONS_CLOSED_2 or hw.ADDITION_CLOSED_3))
+dadditions_2 = Dosator(m = additions_m_2.get_m, out = hw.DADDITIONS_OPEN_2,closed=hw.DADDITIONS_CLOSED_2, containers=(addition_3,addition_4),lock=Lock(key=lambda: hw.ADDITION_CLOSED_3 or hw.ADDITION_CLOSED_4))
 apump_3 = TOF(clk=hw.ADDITION_OPEN_3,q=hw.APUMP_ON_3)
 apump_4 = TOF(clk=hw.ADDITION_OPEN_4,q=hw.APUMP_ON_4)
 
@@ -100,8 +100,8 @@ adapter_3.link(filler_3)
 c_motor_1 = Motor(on=hw.CONVEYOR_ON_1,off=hw.CONVEYOR_OFF_1,ison=hw.CONVEYOR_ON_1)        #конвейер управляется 2мя сигналами
 tc_motor_1 = Motor(on=hw.TCONVEYOR_ON_1,off=hw.TCONVEYOR_OFF_1,ison=True)     #транспортный тоже
                 
-tc_gear_1 = DROT(clk=hw.TCONVEYOR_ROTATING_1,ms=2000)
-c_gear_1 = DROT(clk=hw.CONVEYOR_ROTATING_1,ms=2000)
+tc_gear_1 = DROT(clk=hw.TCONVEYOR_ROTATING_1,ms=3000)
+c_gear_1 = DROT(clk=hw.CONVEYOR_ROTATING_1,ms=3000)
 
 tconveyor_1 = Transport(ison=lambda: tc_gear_1.rotating,out = c_motor_1.remote,power = tc_motor_1.remote )
 
@@ -113,8 +113,21 @@ df_vibrator_1 = UnloadHelper(q=hw.DF_VIBRATOR_ON_1,dosator=dfillers_1,weight=fil
 mcontainer_1 = ManualDosator( closed=hw.MCONTAINER_CLOSED_1, out=hw.MCONTAINER_OPEN_1,dosator=dfillers_1,mode=1,helper=hw.MC_VIBRATOR_ON_1,level=lambda: mclevel_1.level)
 
 motor_1 = Motor(on = hw.MIXER_ON_1,off=hw.MIXER_OFF_1,ison=hw.MIXER_ISON_1)
-gate_1 = MPGate(open = hw.MIXER_OPEN_1,close = hw.MIXER_CLOSE_1,closed=hw.MIXER_CLOSED_1,opened=hw.MIXER_OPENED_1)
-mixer_1 = Mixer(motor=motor_1,gate=gate_1,flows=[x.q for x in [silage_1,silage_2,water_1,addition_1,addition_2,addition_3,addition_4]]+[x.q for x in mcontainer_1.expenses])
+gate_1 = MPGate(open = hw.MIXER_OPEN_1,close = hw.MIXER_CLOSE_1,closed=hw.MIXER_CLOSED_1,opened=hw.MIXER_OPENED_1,middle=hw.MIXER_MIDDLE_1)
+
+class Mixer10(Mixer):
+    expense_0 = POU.var(float(0))
+    expense_1 = POU.var(float(0))
+    expense_2 = POU.var(float(0))
+    expense_3 = POU.var(float(0))
+    expense_4 = POU.var(float(0))
+    expense_5 = POU.var(float(0))
+    expense_6 = POU.var(float(0))
+    expense_7 = POU.var(float(0))
+    expense_8 = POU.var(float(0))
+    expense_9 = POU.var(float(0))
+    
+mixer_1 = Mixer10(motor=motor_1,gate=gate_1,flows=[x.q for x in [silage_1,silage_2,water_1,addition_1,addition_2,addition_3,addition_4]]+[x.q for x in mcontainer_1.expenses])
 
 ready_1 = Readiness(rails=[dcement_1,dwater_1,dadditions_1,dadditions_2,mcontainer_1,mixer_1] )
 loaded_1 = Loaded(rails=[dcement_1,dwater_1,dadditions_1,dadditions_2,mcontainer_1] )
@@ -133,7 +146,7 @@ def mem_manager():
         gc.collect()
         
 def addons():
-    if hw.EMERGENCY_1:
+    if not hw.EMERGENCY_1:
         hw.MIXER_OFF_1 = True
         hw.MIXER_ON_1 = False
         hw.CONVEYOR_ON_1 = False
@@ -141,11 +154,16 @@ def addons():
         hw.TCONVEYOR_ON_1 = False
         hw.TCONVEYOR_OFF_1 = True
 
+    tconveyor_1.set_auto(dfillers_1.out)    #TODO: убрать этот хак, чтобы без него работало
+
     if hw.MAN_DISABLE_1:
+        hw.MANUAL_ON_1 = False
         return
     
     hw.MANUAL_ON_1 = True
     factory_1.manual = True
+    hw.MIXER_ON_1 = hw.MAN_MIXER_ON_1
+    hw.MIXER_OFF_1 = not hw.MAN_MIXER_OFF_1
     hw.AUGER_ON_1 = hw.MAN_AUGER_ON_1
     hw.MIXER_CLOSE_1 = hw.MAN_MIXER_CLOSE_1
     hw.MIXER_OPEN_1 = hw.MAN_MIXER_OPEN_1
@@ -160,10 +178,10 @@ instances = (
             fillers_m_1, dfillers_1, mcontainer_1, filler_1, filler_2, filler_3, tconveyor_1,tc_motor_1,c_motor_1,c_gear_1,tc_gear_1,
             adapter_1,adapter_2,adapter_3,vibrator_1, vibrator_2,vibrator_3,vibrator_4,vibrator_5,vibrator_6,
             dc_vibrator_1,df_vibrator_1,
-            motor_1, gate_1, mixer_1,mem_manager,
+            motor_1, gate_1, mixer_1,
             mclevel_1,
             wpump_1, wpump_out_1,apump_1,apump_2,apump_3,apump_4,
-            addons,
+            addons,mem_manager
             )
 
 def imitation()->Tuple[POU,...]:    #если имитацию создавать внутри функции, то не будет проблем с импортами и глобальными переменными, а так же не будет проблем с автокомплитом в VSCode
@@ -176,8 +194,8 @@ def imitation()->Tuple[POU,...]:    #если имитацию создават�
     imotor_1 = iMOTOR(on = hw.MIXER_ON_1,off=hw.MIXER_OFF_1,ison=hw.MIXER_ISON_1)
     igate_1 = iGATE(open = hw.MIXER_OPEN_1,close=hw.MIXER_CLOSE_1,closed=hw.MIXER_CLOSED_1,opened=hw.MIXER_OPENED_1,middle=hw.MIXER_MIDDLE_1)
 
-    idcement_1 = iVALVE(open = hw.DCEMENT_OPEN_1,closed=hw.DCEMENT_CLOSED_1)
-    idwater_1 = iVALVE(open = hw.DWATER_OPEN_1,closed=hw.DWATER_CLOSED_1)
+    idcement_1 = iVALVE(open = hw.DCEMENT_OPEN_1,opened=hw.DCEMENT_CLOSED_1)
+    idwater_1 = iVALVE(open = hw.DWATER_OPEN_1,opened=hw.DWATER_CLOSED_1)
     idadditions_1 = iVALVE(open = hw.DADDITIONS_OPEN_1,closed=hw.DADDITIONS_CLOSED_1)
     idadditions_2 = iVALVE(open = hw.DADDITIONS_OPEN_2,closed=hw.DADDITIONS_CLOSED_2)
     
@@ -185,11 +203,11 @@ def imitation()->Tuple[POU,...]:    #если имитацию создават�
 
     iauger_1 = iMOTOR(simple=True,on = hw.AUGER_ON_1,ison=hw.AUGER_ISON_1)
     iauger_2 = iMOTOR(simple=True,on = hw.AUGER_ON_2,ison=hw.AUGER_ISON_2)
-    iwater_1 = iVALVE(open = hw.WATER_OPEN_1,closed=hw.WATER_CLOSED_1)
-    iaddition_1 = iVALVE(open = hw.ADDITION_OPEN_1,closed=hw.ADDITION_CLOSED_1)
-    iaddition_2 = iVALVE(open = hw.ADDITION_OPEN_2,closed=hw.ADDITION_CLOSED_2)
-    iaddition_3 = iVALVE(open = hw.ADDITION_OPEN_3,closed=hw.ADDITION_CLOSED_3)
-    iaddition_4 = iVALVE(open = hw.ADDITION_OPEN_4,closed=hw.ADDITION_CLOSED_4)
+    iwater_1 = iVALVE(open = hw.WATER_OPEN_1,opened=hw.WATER_CLOSED_1)
+    iaddition_1 = iVALVE(open = hw.ADDITION_OPEN_1,opened=hw.ADDITION_CLOSED_1)
+    iaddition_2 = iVALVE(open = hw.ADDITION_OPEN_2,opened=hw.ADDITION_CLOSED_2)
+    iaddition_3 = iVALVE(open = hw.ADDITION_OPEN_3,opened=hw.ADDITION_CLOSED_3)
+    iaddition_4 = iVALVE(open = hw.ADDITION_OPEN_4,opened=hw.ADDITION_CLOSED_4)
     
     ifiller_1 = iVALVE(open = hw.FILLER_OPEN_1,closed=hw.FILLER_CLOSED_1)
     ifiller_2 = iVALVE(open = hw.FILLER_OPEN_2,closed=hw.FILLER_CLOSED_2)
@@ -216,6 +234,7 @@ def imitation()->Tuple[POU,...]:    #если имитацию создават�
     hw.CONV_POWER_OK_1.force(True)
     hw.LLEVEL_SILAGE_1.force(True)
     hw.MAN_DISABLE_1.force(True)
+    hw.EMERGENCY_1.force(True)
     
     return (imotor_1, igate_1, 
             idcement_1, iauger_1, iauger_2, icement_m_1, 
@@ -232,3 +251,5 @@ if sys.platform!='esp32':
     instances += imitation( )
 
 if plc: plc.run(instances=instances,ctx=globals())
+
+gc.collect()
