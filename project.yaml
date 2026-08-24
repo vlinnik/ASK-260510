@@ -4,14 +4,14 @@ main:
   prefix: src/gui/data
 
 paths:                      # настройка путей проекта
-  workspace: ../../..       # рабочее пространство проекта (относительно workdir)
+  workspace: .              # рабочее пространство проекта (относительно workdir)
   modules:
   - src/gui
   - src
   simulator: .              # рабочий каталог запуска логик(и) имитаций относительно workspace
   resources: 
-  - .                       # где искать файлы ресурсов относительно workdir
   - src/gui/data
+  - external/concretetheme
   forms: src/gui/data/ui                 # где формы лежат. по умолчанию в ${workdir}/ui
   widgets: src/gui/data/widgets          # где widget-ы лежат. по умолчанию в ${workdir}/widgets
   logic: .
