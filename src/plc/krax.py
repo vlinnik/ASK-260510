@@ -51,7 +51,7 @@ factory_1 = Factory()
 cement_m_1 = Weight(raw=hw.CEMENT_M_1,mmax=1500)
 silage_1 = Container(m = cement_m_1.get_m , out=hw.AUGER_ON_1,closed=~hw.AUGER_ON_1,lock=Lock(key=lambda: hw.DCEMENT_CLOSED_1 or hw.AUGER_ON_2) )
 silage_2 = Container(m = cement_m_1.get_m ,out=hw.AUGER_ON_2,closed=~hw.AUGER_ON_2,lock=Lock(key=lambda: hw.DCEMENT_CLOSED_1 or hw.AUGER_ON_1) )
-dcement_1 = Dosator(m = cement_m_1.get_m, out = hw.DCEMENT_OPEN_1,closed=~hw.DCEMENT_CLOSED_1, containers=(silage_1,silage_2),lock=Lock(key=lambda: hw.AUGER_ON_1 or hw.AUGER_ON_2))
+dcement_1 = Dosator(m = cement_m_1.get_m, out = hw.DCEMENT_OPEN_1,closed=~hw.DCEMENT_CLOSED_1, containers=(silage_1,silage_2),lock=Lock(key=lambda: hw.AUGER_ON_1 or hw.AUGER_ON_2 or not hw.MIXER_ISON_1))
 dc_vibrator_1 = UnloadHelper(q=hw.DC_VIBRATOR_ON_1,dosator=dcement_1,weight=cement_m_1,point=20, dr=3000)
 aerator_1 = Aerator(enable=hw.AUGER_ON_1,q = hw.AERATOR_ON_1)
 aerator_2 = Aerator(enable=hw.AUGER_ON_2,q = hw.AERATOR_ON_2)
@@ -181,7 +181,8 @@ instances = (
             motor_1, gate_1, mixer_1,
             mclevel_1,
             wpump_1, wpump_out_1,apump_1,apump_2,apump_3,apump_4,
-            addons,mem_manager
+            addons,
+            # mem_manager
             )
 
 def imitation()->Tuple[POU,...]:    #если имитацию создавать внутри функции, то не будет проблем с импортами и глобальными переменными, а так же не будет проблем с автокомплитом в VSCode
@@ -249,7 +250,10 @@ def imitation()->Tuple[POU,...]:    #если имитацию создават�
 
 if sys.platform!='esp32':
     instances += imitation( )
-
+else:
+    from _board import tick
+    instances += (tick,)
+    
 if plc: plc.run(instances=instances,ctx=globals())
 
 gc.collect()

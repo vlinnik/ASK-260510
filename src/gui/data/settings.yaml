@@ -1,16 +1,19 @@
 main:
   stdout: "DEBUG:INFO"
   stderr: "WARNING:"
+  prefix: src/gui/data
 
 paths:                      # настройка путей проекта
   workspace: ../../..       # рабочее пространство проекта (относительно workdir)
   modules:
-  - ..
-  - ../..
+  - src/gui
+  - src
   simulator: .              # рабочий каталог запуска логик(и) имитаций относительно workspace
-  resources: .              # где искать файлы ресурсов относительно workdir
-  forms: ui        # где формы лежат. по умолчанию в ${workdir}/ui
-  widgets: widgets     # где widget-ы лежат. по умолчанию в ${workdir}/widgets
+  resources: 
+  - .                       # где искать файлы ресурсов относительно workdir
+  - src/gui/data
+  forms: src/gui/data/ui                 # где формы лежат. по умолчанию в ${workdir}/ui
+  widgets: src/gui/data/widgets          # где widget-ы лежат. по умолчанию в ${workdir}/widgets
   logic: .
 
 windows:
@@ -37,7 +40,7 @@ devices:
 - name: PLC
   type: PYPLC
   args:
-    device: 192.168.2.10
+    device: 192.168.1.83
 
 simulator:
 - task: master

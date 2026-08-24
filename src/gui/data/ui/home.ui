@@ -69,7 +69,7 @@ QLabel[style=&quot;vodoley-status&quot;]
 	font-size: 9pt;
 	padding: 8px;
 }
-QLabel[style='hint']
+QLabel[style='hint'],QCheckBox[style='hint']
 {
 	color: lightGray;
 	font-weight: bold;
@@ -2897,6 +2897,111 @@ QGroupBox::title[style=&quot;panel&quot;]
     <string/>
    </property>
   </widget>
+  <widget class="QCheckBox" name="dis_1">
+   <property name="geometry">
+    <rect>
+     <x>56</x>
+     <y>440</y>
+     <width>65</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ОТКЛ</string>
+   </property>
+   <property name="style" stdset="0">
+    <string>hint</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dis_2">
+   <property name="geometry">
+    <rect>
+     <x>116</x>
+     <y>440</y>
+     <width>65</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>ОТКЛ</string>
+   </property>
+   <property name="style" stdset="0">
+    <string>hint</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dis_3">
+   <property name="geometry">
+    <rect>
+     <x>199</x>
+     <y>440</y>
+     <width>65</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ОТКЛ</string>
+   </property>
+   <property name="style" stdset="0">
+    <string>hint</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dis_4">
+   <property name="geometry">
+    <rect>
+     <x>261</x>
+     <y>440</y>
+     <width>65</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>ОТКЛ</string>
+   </property>
+   <property name="style" stdset="0">
+    <string>hint</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dis_5">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>440</y>
+     <width>65</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ОТКЛ</string>
+   </property>
+   <property name="style" stdset="0">
+    <string>hint</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dis_6">
+   <property name="geometry">
+    <rect>
+     <x>402</x>
+     <y>440</y>
+     <width>65</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>ОТКЛ</string>
+   </property>
+   <property name="style" stdset="0">
+    <string>hint</string>
+   </property>
+  </widget>
   <zorder>pump_6</zorder>
   <zorder>pump_3</zorder>
   <zorder>pump_2</zorder>
@@ -2969,32 +3074,38 @@ QGroupBox::title[style=&quot;panel&quot;]
   <zorder>pressure</zorder>
   <zorder>mc_weight</zorder>
   <zorder>tconveyorpanel</zorder>
+  <zorder>dis_1</zorder>
+  <zorder>dis_2</zorder>
+  <zorder>dis_3</zorder>
+  <zorder>dis_4</zorder>
+  <zorder>dis_5</zorder>
+  <zorder>dis_6</zorder>
  </widget>
  <customwidgets>
   <customwidget>
+   <class>TConveyorPanel</class>
+   <extends>QGroupBox</extends>
+   <header>concreteui.tconveyorpanel</header>
+  </customwidget>
+  <customwidget>
    <class>DosatorPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui/dosatorpanel.h</header>
+   <header>concreteui.dosatorpanel</header>
   </customwidget>
   <customwidget>
    <class>DoserPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui/doserpanel.h</header>
+   <header>concreteui.doserpanel</header>
   </customwidget>
   <customwidget>
    <class>MixerPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui/mixerpanel.h</header>
-  </customwidget>
-  <customwidget>
-   <class>TConveyorPanel</class>
-   <extends>QGroupBox</extends>
-   <header>concreteui/tconveyorpanel.h</header>
+   <header>concreteui.mixerpanel</header>
   </customwidget>
   <customwidget>
    <class>MContainerPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui/mcontainerpanel.h</header>
+   <header>concreteui.mcontainerpanel</header>
   </customwidget>
   <customwidget>
    <class>pyAnimation</class>
@@ -3004,18 +3115,13 @@ QGroupBox::title[style=&quot;panel&quot;]
   </customwidget>
   <customwidget>
    <class>pyRuntimeTrend</class>
-   <extends>QwtPlot</extends>
-   <header>pysca.runtimetrend</header>
-  </customwidget>
-  <customwidget>
-   <class>QwtPlot</class>
    <extends>QFrame</extends>
-   <header>qwt_plot.h</header>
+   <header>pysca.runtimetrend</header>
   </customwidget>
  </customwidgets>
  <resources>
   <include location="../concrete.qrc"/>
-  <include location="../concretetheme/concrete.qrc"/>
+  <include location="../concrete.qrc"/>
  </resources>
  <connections/>
 </ui>
