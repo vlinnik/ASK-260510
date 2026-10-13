@@ -8,3 +8,5 @@ upydev_.config
 dist
 *_rc.py
 debian/*.ex
+debian/files
+src/gui/_version.py
