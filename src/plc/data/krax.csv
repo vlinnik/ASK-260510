@@ -1,4 +1,4 @@
-Имя;Тип;Модуль;Канал;Описание
+Name;Type;Module;Channel;Description
 
 FILLERS_M_1;AI;1;1;Вес конвейера дозатора
 MCONTAINER_M_1;AI;1;2;Вес накопительного бункера

@@ -275,7 +275,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <x>515</x>
      <y>470</y>
      <width>204</width>
-     <height>93</height>
+     <height>92</height>
     </rect>
    </property>
   </widget>
@@ -285,7 +285,7 @@ QGroupBox::title[style=&quot;panel&quot;]
      <x>750</x>
      <y>470</y>
      <width>204</width>
-     <height>93</height>
+     <height>92</height>
     </rect>
    </property>
    <property name="title">
@@ -3002,6 +3002,25 @@ QGroupBox::title[style=&quot;panel&quot;]
     <string>hint</string>
    </property>
   </widget>
+  <widget class="QLabel" name="hlevel_2">
+   <property name="geometry">
+    <rect>
+     <x>964</x>
+     <y>6</y>
+     <width>22</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>ДАТЧИК УРОВНЯ</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../../../../external/concretetheme/concrete.qrc">:/concrete/red.png</pixmap>
+   </property>
+  </widget>
   <zorder>pump_6</zorder>
   <zorder>pump_3</zorder>
   <zorder>pump_2</zorder>
@@ -3080,32 +3099,33 @@ QGroupBox::title[style=&quot;panel&quot;]
   <zorder>dis_4</zorder>
   <zorder>dis_5</zorder>
   <zorder>dis_6</zorder>
+  <zorder>hlevel_2</zorder>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>TConveyorPanel</class>
-   <extends>QGroupBox</extends>
-   <header>concreteui.tconveyorpanel</header>
-  </customwidget>
-  <customwidget>
    <class>DosatorPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui.dosatorpanel</header>
+   <header>concreteui/dosatorpanel.h</header>
   </customwidget>
   <customwidget>
    <class>DoserPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui.doserpanel</header>
+   <header>concreteui/doserpanel.h</header>
   </customwidget>
   <customwidget>
    <class>MixerPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui.mixerpanel</header>
+   <header>concreteui/mixerpanel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>TConveyorPanel</class>
+   <extends>QGroupBox</extends>
+   <header>concreteui/tconveyorpanel.h</header>
   </customwidget>
   <customwidget>
    <class>MContainerPanel</class>
    <extends>QGroupBox</extends>
-   <header>concreteui.mcontainerpanel</header>
+   <header>concreteui/mcontainerpanel.h</header>
   </customwidget>
   <customwidget>
    <class>pyAnimation</class>
@@ -3115,8 +3135,13 @@ QGroupBox::title[style=&quot;panel&quot;]
   </customwidget>
   <customwidget>
    <class>pyRuntimeTrend</class>
-   <extends>QFrame</extends>
+   <extends>QwtPlot</extends>
    <header>pysca.runtimetrend</header>
+  </customwidget>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
   </customwidget>
  </customwidgets>
  <resources>

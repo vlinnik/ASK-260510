@@ -54,7 +54,10 @@ silage_2 = Container(m = cement_m_1.get_m ,out=hw.AUGER_ON_2,closed=~hw.AUGER_ON
 dcement_1 = Dosator(m = cement_m_1.get_m, out = hw.DCEMENT_OPEN_1,closed=~hw.DCEMENT_CLOSED_1, containers=(silage_1,silage_2),lock=Lock(key=lambda: hw.AUGER_ON_1 or hw.AUGER_ON_2 or not hw.MIXER_ISON_1))
 dc_vibrator_1 = UnloadHelper(q=hw.DC_VIBRATOR_ON_1,dosator=dcement_1,weight=cement_m_1,point=20, dr=3000)
 aerator_1 = Aerator(enable=hw.AUGER_ON_1,q = hw.AERATOR_ON_1)
-aerator_2 = Aerator(enable=hw.AUGER_ON_2,q = hw.AERATOR_ON_2)
+from pyplc.ld import LD     #pyplc>=0.5.2 с новым LD
+from pyplc.attribute import AnyAttribute
+AERATOR_EN_2 = AnyAttribute( False )
+aerator_2 = Aerator(enable=hw.AUGER_ON_2,q = LD.entry().no(AERATOR_EN_2).mov(hw.AERATOR_ON_2).fe(AERATOR_EN_2).rst(hw.AERATOR_ON_2).end())
 
 water_m_1 = Weight(raw=hw.WATER_M_1,mmax=500)
 water_1 = Container(m = water_m_1.get_m, out=hw.WATER_OPEN_1,closed=~hw.WATER_CLOSED_1,lock=Lock(key=hw.DWATER_CLOSED_1))
@@ -248,11 +251,8 @@ def imitation()->Tuple[POU,...]:    #если имитацию создават�
             iconv_rot_1,
             imcontainer_m_1,)
 
-if sys.platform!='esp32':
+if sys.platform=='esp32':
     instances += imitation( )
-else:
-    from _board import tick
-    instances += (tick,)
     
 if plc: plc.run(instances=instances,ctx=globals())
 

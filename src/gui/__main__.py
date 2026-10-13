@@ -9,4 +9,6 @@ def main():
     app()
     
 if __name__=="__main__":
+    import sys
+    sys.argv += ["run","gui"]
     main()
