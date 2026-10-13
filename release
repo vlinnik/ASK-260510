@@ -1,0 +1,9 @@
+#!/bin/sh
+export VERSION=$(git describe --tags --abbrev=0 |  sed 's/^v//')
+export DEBVER=${VERSION}
+export EMAIL="Linnik V.V. <vlinnik@mail.ru>"
+gbp dch --new-version="$DEBVER" --debian-branch=main
+gbp dch --auto --debian-branch=main
+gbp dch --release --debian-branch=main
+git commit -am "Update changelog for $VERSION"
+debuild -b -us -uc
