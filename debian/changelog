@@ -1,5 +1,20 @@
-ask-260510 (1.0) UNRELEASED; urgency=medium
+ask-260510 (1.0) resolute; urgency=medium
 
+  [ vlinnik ]
   * Initial release.
 
- -- vlinnik <vlinnik@mail.ru>  Fri, 22 May 2026 10:59:39 +0300
+  [ Linnik V.V ]
+  * Без имитации на ПЛК
+  * Мелкие исправления (ирк двигателя)
+  * Пуск
+  * refactor: под pysca 0.3.3
+  * chores: под pysca 0.3.3.post2+gc63d1df9b.d20260817
+  * refactor: pysca 0.3.4.post2
+  * Без имитации на ПЛК
+  * Мелкие исправления (ирк двигателя)
+  * Пуск
+  * refactor: под pysca 0.3.3
+  * chores: под pysca 0.3.3.post2+gc63d1df9b.d20260817
+  * refactor: pysca 0.3.4.post2
+
+ -- Linnik V.V. <vlinnik@mail.ru>  Tue, 13 Oct 2026 16:10:59 +0300
